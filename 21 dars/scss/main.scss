@@ -1,0 +1,706 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// font
+@font-face {
+  font-family: "Helvetica Neue Thin";
+  font-weight: 200;
+  src: url("Fonts/56be84de-9d60-4089-8df0-0ea6ec786b84.eot?#iefix")
+      format("embedded-opentype"),
+    url("Fonts/50d35bbc-dfd4-48f1-af16-cf058f69421d.woff") format("woff"),
+    url("Fonts/278bef59-6be1-4800-b5ac-1f769ab47430.ttf") format("truetype"),
+    url("Fonts/2e309b1b-08b8-477f-bc9e-7067cf0af0b3.svg#2e309b1b-08b8-477f-bc9e-7067cf0af0b3")
+      format("svg");
+}
+@font-face {
+  font-family: "Helvetica Neue Medium";
+  font-weight: bold;
+  src: url("Fonts/07fe0fec-b63f-4963-8ee1-535528b67fdb.eot??#iefix")
+      format("embedded-opentype"),
+    url("Fonts/60be5c39-863e-40cb-9434-6ebafb62ab2b.woff") format("woff"),
+    url("Fonts/4c6503c9-859b-4d3b-a1d5-2d42e1222415.ttf") format("truetype"),
+    url("Fonts/36c182c6-ef98-4021-9b0d-d63122c2bbf5.svg#36c182c6-ef98-4021-9b0d-d63122c2bbf5")
+      format("svg");
+}
+@font-face {
+  font-family: "Helvetica Neue Ultralight";
+  src: url("Fonts/072d8516-5d40-44bc-b694-65b3c8bd8fa5.eot?#iefix");
+  src: url("Fonts/072d8516-5d40-44bc-b694-65b3c8bd8fa5.eot?#iefix")
+      format("eot"),
+    url("Fonts/723fd1ed-5aad-454d-af88-3711c5caf1c7.woff") format("woff"),
+    url("Fonts/2a81d94e-d365-4f5f-9957-7e96414d6a72.ttf") format("truetype"),
+    url("Fonts/6be38bc3-96b3-47e3-a9ef-e1a184b54d64.svg#6be38bc3-96b3-47e3-a9ef-e1a184b54d64")
+      format("svg");
+}
+
+%HelveticaThin {
+  font-family: "Helvetica Neue Thin";
+  font-weight: 200;
+}
+%HelveticaMedium {
+  font-family: "Helvetica Neue Medium";
+  font-weight: 200;
+}
+%HelveticaUltralight {
+  font-family: "Helvetica Neue Ultralight";
+  font-weight: 200;
+}
+
+a {
+  text-decoration: none;
+}
+body {
+  background-color: #f5f5f5;
+}
+
+.container {
+  padding: 30px 50px;
+}
+// top star
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__logo {
+    line-height: 30px;
+  }
+  &__logo div {
+    position: absolute;
+    top: 32px;
+    display: inline-block;
+    background-color: goldenrod;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  &__logo a {
+    padding-left: 40px;
+    font-size: 20px;
+    @extend %HelveticaMedium;
+    color: black;
+  }
+  &__logo span {
+    @extend %HelveticaThin;
+    letter-spacing: 1px;
+    padding-left: 9px;
+  }
+  &__nav {
+    display: flex;
+  }
+  &__link {
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+    @extend %HelveticaThin;
+    color: black;
+    letter-spacing: 1px;
+    line-height: 30px;
+  }
+  &__link:nth-child(1) {
+    border-right: 1px solid rgb(0, 0, 0);
+    padding-right: 10px;
+  }
+  &__link:nth-child(2) {
+    border-right: 1px solid rgb(0, 0, 0);
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  &__link:nth-child(3) {
+    padding-left: 10px;
+  }
+  &__link:hover {
+    color: rgba(139, 51, 69, 0.562);
+  }
+  .actv {
+    color: rgba(139, 51, 69, 0.562);
+  }
+  .hamburger {
+    display: none;
+    width: 40px;
+    height: 40px;
+  }
+}
+//midle star
+.midle {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding-top: 110px;
+  padding-left: 150px;
+  padding-bottom: 190px;
+
+  &__img {
+    border-radius: 50%;
+    width: 458px;
+    height: 458px;
+  }
+  &__title {
+    @extend %HelveticaMedium;
+    font-size: 92px;
+    letter-spacing: 3px;
+    line-height: 170px;
+  }
+  &__subtitle {
+    @extend %HelveticaMedium;
+    font-size: 25px;
+    font-weight: 500;
+  }
+  &__text {
+    width: 58%;
+    @extend %HelveticaThin;
+    font-size: 17px;
+    line-height: 29px;
+    padding-bottom: 90px;
+  }
+
+  &__link1 {
+    background-color: rgb(243, 190, 18);
+    border-radius: 50%;
+    border: 1px solid #000;
+    color: #000;
+    padding: 55px 34px;
+    margin-right: 20px;
+    font-size: 22px;
+    font-weight: 600;
+  }
+  &__link2 {
+    background-color: rgb(230, 71, 43);
+    border-radius: 50%;
+    border: 1px solid #000;
+    color: #000;
+    padding: 55px 34px;
+    margin-right: 20px;
+    font-size: 22px;
+    font-weight: 600;
+  }
+  &__link3 {
+    background-color: rgb(18, 226, 233);
+    border-radius: 50%;
+    border: 1px solid #000;
+    color: #000;
+    padding: 55px 34px;
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .active {
+    transition: all 0.4s ease-in-out;
+  }
+  .active:hover {
+    background-color: transparent;
+  }
+}
+//footer star
+.footer {
+  margin-top: 10px;
+  margin-bottom: 50px;
+
+  &__box {
+    display: flex;
+    justify-content: space-around;
+  }
+  &__item p,
+  a {
+    color: #000;
+    @extend %HelveticaThin;
+  }
+  &__item h3 p {
+    padding-bottom: 10px;
+  }
+  &__img {
+    width: 20px;
+    height: 20px;
+  }
+}
+//resume star
+.inner {
+  padding: 50px 180px;
+  h1 {
+    font-size: 45px;
+  }
+}
+.resume {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 90px;
+  margin-bottom: 50px;
+  &__title {
+    padding-top: 70px;
+    font-size: 24px;
+    h1 {
+      font-size: 36px;
+    }
+  }
+  &__content {
+    padding-top: 80px;
+  }
+  &__item {
+    position: relative;
+    span {
+      position: absolute;
+      left: -100px;
+      top: 10px;
+    }
+  }
+  &__item b {
+    font-size: 26px;
+    @extend %HelveticaMedium;
+    font-weight: 600;
+  }
+  &__item p {
+    font-size: 15px;
+    @extend %HelveticaThin;
+    line-height: 30px;
+    padding-bottom: 20px;
+  }
+  &__img {
+    width: 414px;
+    height: 257px;
+  }
+}
+//project star
+.resume__title p {
+  width: 461px;
+  font-size: 18px;
+  line-height: 30px;
+  @extend %HelveticaThin;
+}
+// contact star
+.contact {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 180px 300px;
+  &__info {
+    line-height: 30px;
+    h1 {
+      @extend %HelveticaMedium;
+      font-weight: 800;
+      font-size: 45px;
+      padding-bottom: 18px;
+    }
+    h3 {
+      @extend %HelveticaMedium;
+    }
+    p {
+      @extend %HelveticaUltralight;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+  }
+  &__seorch {
+    label {
+      display: block;
+      padding-bottom: 6px;
+      padding-top: 10px;
+      padding-left: 15px;
+      @extend %HelveticaThin;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    textarea {
+      margin-left: 15px;
+      background-color: transparent;
+      border: 1px solid rgb(109, 105, 105);
+    }
+  }
+  &__user {
+    display: flex;
+    position: relative;
+    label {
+      display: block;
+      padding-bottom: 6px;
+      padding-top: 10px;
+      padding-left: 15px;
+      @extend %HelveticaThin;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    input {
+      background-color: transparent;
+      border: 1px solid rgb(109, 105, 105);
+      margin: 50px 90px;
+    }
+    input[type="text"] {
+      width: 90%;
+      padding: 15px 14px;
+      margin: 9px 13px;
+      box-sizing: border-box;
+      border: 1px solid #555;
+    }
+    input[type="email"] {
+      width: 90%;
+      padding: 15px 14px;
+      margin: 9px 13px;
+      box-sizing: border-box;
+      border: 1px solid #555;
+    }
+  }
+  &__submit {
+    position: absolute;
+    padding: 52px 30px;
+    margin-left: 20px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    background-color: darkorange;
+    transition: all 0.4s ease-in-out;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+  &__submit[value="Submit"] {
+    font-size: 22px;
+    font-weight: 600;
+  }
+}
+// ===== media css =====
+@media (min-width: 990px) and (max-width: 1200px) {
+  //top star
+  .midle {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    padding-top: 110px;
+    padding-left: 60px;
+    padding-bottom: 190px;
+    &__link1 {
+      padding: 43px 20px;
+      margin-right: 0px;
+    }
+    &__link2 {
+      padding: 43px 20px;
+      margin-right: 0px;
+    }
+    &__link3 {
+      padding: 43px 20px;
+      margin-right: 0px;
+    }
+    &__img {
+      border-radius: 50%;
+      width: 441px;
+      height: 439px;
+    }
+    &__text {
+      width: 69%;
+      font-size: 17px;
+      line-height: 29px;
+      padding-bottom: 90px;
+    }
+  }
+  // resume star
+  .inner {
+    padding: 50px 40px;
+  }
+  .resume {
+    display: grid;
+    grid-gap: 22px;
+  }
+  //contact star
+  .contact {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 84px 300px;
+  }
+}
+@media (min-width: 769px) and (max-width: 989.9px) {
+  .midle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 50px;
+  }
+  // resume and project
+  .inner {
+    padding: 50px 54px;
+    h1 {
+      font-size: 35px;
+    }
+    .resume {
+      &__item b {
+        font-size: 21px;
+        font-weight: 600;
+      }
+      &__item p {
+        font-size: 10px;
+        line-height: 23px;
+        padding-bottom: 20px;
+      }
+      &__content {
+        width: 100%;
+      }
+    }
+    #project {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 0px;
+    }
+  }
+  //contact star
+
+  .contact {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 30px;
+    padding: 50px 53px 221px;
+  }
+}
+@media (min-width: 447px) and (max-width: 768.9px) {
+  //top srat
+  .top {
+    &__nav {
+      display: none;
+    }
+    .hamburger {
+      display: block;
+    }
+  }
+  .midle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 12px;
+
+    &__img {
+      width: 380px;
+      height: 380px;
+    }
+    &__title {
+      font-size: 80px;
+      letter-spacing: 3px;
+      line-height: 116px;
+    }
+    &__text {
+      width: 91%;
+    }
+    &__link1 {
+      margin-right: 6px;
+      font-size: 18px;
+    }
+    &__link2 {
+      margin-right: 6px;
+      font-size: 18px;
+    }
+    &__link3 {
+      margin-right: 6px;
+      font-size: 18px;
+    }
+  }
+  .footer {
+    &__box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 60px;
+      text-align: center;
+    }
+  }
+  //resume  and ... prject
+  .inner {
+    padding: 50px 100px;
+  }
+  .resume {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 17px;
+    margin-bottom: 50px;
+    &__content {
+      padding-top: 23px;
+    }
+    &__title {
+      padding-top: 50px;
+      font-size: 24px;
+      h1 {
+        font-size: 36px;
+      }
+    }
+    &__item p {
+      font-size: 10px;
+      line-height: 21px;
+      padding-bottom: 20px;
+    }
+    &__item span {
+      position: absolute;
+      left: -77px;
+      top: 10px;
+      font-size: 13px;
+    }
+    &__img {
+      width: 266px;
+      height: 144px;
+    }
+    #project__title p {
+      width: 286px;
+      font-size: 10px;
+      line-height: 25px;
+    }
+    #project__title {
+      h1 {
+        font-size: 29px;
+      }
+    }
+  }
+  //contact star
+
+  .contact {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 30px;
+    padding: 50px 9px 221px;
+    &__submit {
+      margin-left: 5px;
+    }
+  }
+}
+@media (min-width: 0px) and (max-width: 446.9px) {
+  .container {
+    padding: 30px 21px;
+  }
+  //top star
+  .top {
+    &__logo a {
+      padding-left: 28px;
+      font-size: 17px;
+      color: black;
+    }
+    &__nav {
+      display: none;
+    }
+    .hamburger {
+      display: block;
+      width: 30px;
+      height: 30px;
+    }
+  }
+  .midle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 12px;
+    padding-top: 24px;
+    padding-bottom: 110px;
+
+    .midle__img {
+      width: 286px;
+      height: 286px;
+    }
+    &__title {
+      font-size: 80px;
+      letter-spacing: 3px;
+      line-height: 116px;
+    }
+    &__text {
+      width: 91%;
+      padding-bottom: 61px;
+    }
+    &__link1 {
+      margin-right: 6px;
+      font-size: 15px;
+      padding: 29px 12px;
+    }
+    &__link2 {
+      margin-right: 6px;
+      font-size: 15px;
+      padding: 29px 12px;
+    }
+    &__link3 {
+      margin-right: 6px;
+      font-size: 15px;
+      padding: 29px 12px;
+    }
+  }
+  .footer {
+    &__box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 60px;
+      text-align: center;
+    }
+  }
+  //resume and ... project
+  .inner {
+    padding: 15px 77px;
+
+    h1 {
+      font-size: 30px;
+    }
+  }
+
+  .resume {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 17px;
+    margin-bottom: 50px;
+    &__content {
+      padding-top: 23px;
+    }
+    &__title {
+      padding-top: 50px;
+      font-size: 24px;
+      h1 {
+        font-size: 22px;
+      }
+    }
+    &__item p {
+      font-size: 10px;
+      line-height: 21px;
+      padding-bottom: 20px;
+    }
+    &__item span {
+      position: absolute;
+      left: -64px;
+      top: 10px;
+      font-size: 9px;
+    }
+    &__item b {
+      font-size: 16px;
+      font-weight: 600;
+    }
+    &__img {
+      width: 237px;
+      height: 139px;
+    }
+    #project__title p {
+      width: 286px;
+      font-size: 10px;
+      line-height: 25px;
+    }
+    #project__title {
+      h1 {
+        font-size: 29px;
+      }
+    }
+  }
+  //contact star
+  .contact {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 30px;
+    padding: 50px 8px 221px;
+    &__info h1 {
+      font-weight: 800;
+      font-size: 40px;
+      padding-bottom: 18px;
+    }
+
+    &__submit {
+      display: block;
+      margin-left: 5px;
+      margin-top: 5px;
+    }
+    &__user {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+  }
+}
